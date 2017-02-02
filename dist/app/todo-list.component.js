@@ -9,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'First Angular 2 App !';
+var todo_service_1 = require('./todo.service');
+var TodoListComponent = (function () {
+    function TodoListComponent(todoService) {
+        this.todoService = todoService;
+        this.list = [];
+        this.list = todoService.getTodos();
     }
-    AppComponent = __decorate([
+    TodoListComponent = __decorate([
         core_1.Component({
-            selector: 'todo-app',
-            template: "\n  <div class=\"main\">\n    <h1>{{title}}</h1>\n    <create-todo></create-todo>\n    <todo-list></todo-list>\n  </div>\n  ",
+            selector: 'todo-list',
+            template: "\n    <div class=\"todo-list\">\n        <todo *ngFor=\"let todo of list\" [todo]=\"todo\"></todo>\n    </div>\n    ",
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [todo_service_1.TodoService])
+    ], TodoListComponent);
+    return TodoListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodoListComponent = TodoListComponent;
+//# sourceMappingURL=todo-list.component.js.map

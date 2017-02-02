@@ -9,18 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'First Angular 2 App !';
+var TodoService = (function () {
+    function TodoService() {
+        this.todos = [
+            { title: "qwe" },
+            { title: "rtyrtyrt" },
+        ];
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'todo-app',
-            template: "\n  <div class=\"main\">\n    <h1>{{title}}</h1>\n    <create-todo></create-todo>\n    <todo-list></todo-list>\n  </div>\n  ",
-        }), 
+    TodoService.prototype.getTodos = function () {
+        return this.todos;
+    };
+    TodoService.prototype.addTodo = function (todo) {
+        this.todos.push(todo);
+    };
+    TodoService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodoService);
+    return TodoService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodoService = TodoService;
+//# sourceMappingURL=todo.service.js.map
