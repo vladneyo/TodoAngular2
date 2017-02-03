@@ -10,7 +10,6 @@ import { TodoService } from './todo.service';
         <todo *ngFor="let todo of list" [todo]="todo"></todo>
     </div>
     `,
-    //providers: [ TodoService ]
 })
 export class TodoListComponent{
     list: Todo[] = [];

@@ -1,0 +1,18 @@
+<form (ngSubmit)="add()"
+    #newtodo="ngForm" 
+    class="form-inline create-form center-block">
+        
+    <input type="text" [(ngModel)]="todo.title" 
+        #title="ngModel"
+        name="title"
+        class="form-control"
+        required minlength="4">
+
+    <input type="color" [(ngModel)]="todo.color"
+        #color="ngModel"
+        name="color"
+        class="form-control input-color">
+    
+    <input type="submit" value="ADD"
+        class="btn btn-default pull-right">
+</form>

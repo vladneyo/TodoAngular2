@@ -12,8 +12,9 @@ var core_1 = require('@angular/core');
 var TodoService = (function () {
     function TodoService() {
         this.todos = [
-            { title: "qwe" },
-            { title: "rtyrtyrt" },
+            { title: "Learn Angular 2", color: "rgba(0, 128, 128, 0.5)" },
+            { title: "Create first component", color: "rgba(90,199,185, 0.3)" },
+            { title: "Make a money", color: "rgba(70,146,185, 0.8)" },
         ];
     }
     TodoService.prototype.getTodos = function () {

@@ -16,7 +16,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'todo-app',
-            template: "\n  <div class=\"main\">\n    <h1>{{title}}</h1>\n    <create-todo></create-todo>\n    <todo-list></todo-list>\n  </div>\n  ",
+            template: "\n  <div class=\"container main\">\n    <h1>{{title}}</h1>\n    <create-todo></create-todo>\n    <todo-list></todo-list>\n  </div>\n  ",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -2,6 +2,7 @@
 var Todo = (function () {
     function Todo() {
         this.title = '';
+        this.color = 'transparent';
     }
     return Todo;
 }());

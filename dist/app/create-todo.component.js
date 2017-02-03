@@ -27,7 +27,7 @@ var CreateTodoComponent = (function () {
     CreateTodoComponent = __decorate([
         core_1.Component({
             selector: 'create-todo',
-            template: "\n    <div>\n        <input type=\"text\" [(ngModel)]=\"todo.title\">\n        <button (click)=\"add()\">ADD</button>\n    </div>",
+            templateUrl: './app/create-todo.component.html',
         }), 
         __metadata('design:paramtypes', [todo_service_1.TodoService])
     ], CreateTodoComponent);

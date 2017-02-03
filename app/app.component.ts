@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'todo-app',
   template: `
-  <div class="main">
+  <div class="container main">
     <h1>{{title}}</h1>
     <create-todo></create-todo>
     <todo-list></todo-list>

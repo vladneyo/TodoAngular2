@@ -20,7 +20,7 @@ var TodoComponent = (function () {
     TodoComponent = __decorate([
         core_1.Component({
             selector: 'todo',
-            template: "\n    <div class=\"todo\">\n        <p>{{todo.title}}</p>\n    </div>\n    ",
+            template: "\n    <div class=\"todo\" [ngStyle]=\"{'background-color': todo.color}\">\n        <p>{{todo.title}}</p>\n    </div>\n    ",
         }), 
         __metadata('design:paramtypes', [])
     ], TodoComponent);

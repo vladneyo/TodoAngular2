@@ -4,11 +4,7 @@ import { TodoService } from './todo.service';
 
 @Component({
     selector: 'create-todo',
-    template: `
-    <div>
-        <input type="text" [(ngModel)]="todo.title">
-        <button (click)="add()">ADD</button>
-    </div>`,
+    templateUrl: './app/create-todo.component.html',
 })
 export class CreateTodoComponent{
     
@@ -17,14 +13,15 @@ export class CreateTodoComponent{
         }
 
     private _todoService: TodoService;
+
     todo: Todo = new Todo();
 
-    add(){
+    add(): void{
         this._todoService.addTodo(this.todo);
         this.clear();
     }
 
-    private clear(){
+    private clear(): void{
         this.todo = new Todo();
     }
 }
