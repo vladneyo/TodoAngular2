@@ -4,9 +4,11 @@ import { Component } from '@angular/core';
   selector: 'todo-app',
   template: `
   <div class="container main">
-    <h1>{{title}}</h1>
-    <create-todo></create-todo>
-    <todo-list></todo-list>
+    <nav>
+      <a routerLink="/todos" routerLinkActive="active">Todos</a>
+      <a routerLink="/search" routerLinkActive="active">Search</a>
+    </nav>
+    <router-outlet></router-outlet>
   </div>
   `,
 

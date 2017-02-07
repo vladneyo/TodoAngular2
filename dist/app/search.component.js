@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'First Angular 2 App !';
+var SearchComponent = (function () {
+    function SearchComponent() {
+        this.title = 'Search';
     }
-    AppComponent = __decorate([
+    SearchComponent = __decorate([
         core_1.Component({
-            selector: 'todo-app',
-            template: "\n  <div class=\"container main\">\n    <nav>\n      <a routerLink=\"/todos\" routerLinkActive=\"active\">Todos</a>\n      <a routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n    </nav>\n    <router-outlet></router-outlet>\n  </div>\n  ",
+            selector: 'search-todo',
+            template: "\n    <h1>{{title}}</h1>\n  ",
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], SearchComponent);
+    return SearchComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SearchComponent = SearchComponent;
+//# sourceMappingURL=search.component.js.map

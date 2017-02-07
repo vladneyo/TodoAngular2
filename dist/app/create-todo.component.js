@@ -11,25 +11,66 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var todo_1 = require('./todo');
 var todo_service_1 = require('./todo.service');
+var forms_1 = require('@angular/forms');
 var CreateTodoComponent = (function () {
-    function CreateTodoComponent(todoService) {
+    function CreateTodoComponent(todoService, fb) {
         this.todoService = todoService;
+        this.fb = fb;
+        this.formErrors = {
+            'title': '',
+            'color': ''
+        };
+        this.validationMessages = {
+            'title': {
+                'required': 'Title is required.',
+                'minlength': 'Title must be at least 4 characters long.'
+            },
+            'color': {
+                'required': 'Color is required.'
+            }
+        };
         this.todo = new todo_1.Todo();
-        this._todoService = todoService;
     }
-    CreateTodoComponent.prototype.add = function () {
-        this._todoService.addTodo(this.todo);
-        this.clear();
+    CreateTodoComponent.prototype.ngOnInit = function () {
+        this.buildForm();
     };
-    CreateTodoComponent.prototype.clear = function () {
-        this.todo = new todo_1.Todo();
+    CreateTodoComponent.prototype.add = function () {
+        this.todoService.addTodo(this.todoForm.value);
+        this.todoForm.reset();
+    };
+    CreateTodoComponent.prototype.buildForm = function () {
+        var _this = this;
+        this.todoForm = this.fb.group({
+            'title': [this.todo.title, [
+                    forms_1.Validators.required,
+                    forms_1.Validators.minLength(4)]],
+            'color': [this.todo.color, [forms_1.Validators.required]]
+        });
+        this.todoForm.valueChanges.subscribe(function (data) { return _this.onValueChanged(data); });
+        this.onValueChanged();
+    };
+    CreateTodoComponent.prototype.onValueChanged = function (data) {
+        if (!this.todoForm) {
+            return;
+        }
+        var form = this.todoForm;
+        for (var field in this.formErrors) {
+            this.formErrors[field] = '';
+            var control = form.get(field);
+            if (control && control.dirty && !control.valid) {
+                var messages = this.validationMessages[field];
+                for (var key in control.errors) {
+                    this.formErrors[field] += messages[key] + ' ';
+                }
+            }
+        }
     };
     CreateTodoComponent = __decorate([
         core_1.Component({
             selector: 'create-todo',
             templateUrl: './app/create-todo.component.html',
         }), 
-        __metadata('design:paramtypes', [todo_service_1.TodoService])
+        __metadata('design:paramtypes', [todo_service_1.TodoService, forms_1.FormBuilder])
     ], CreateTodoComponent);
     return CreateTodoComponent;
 }());

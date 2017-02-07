@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var TodosComponent = (function () {
+    function TodosComponent() {
         this.title = 'First Angular 2 App !';
     }
-    AppComponent = __decorate([
+    TodosComponent = __decorate([
         core_1.Component({
-            selector: 'todo-app',
-            template: "\n  <div class=\"container main\">\n    <nav>\n      <a routerLink=\"/todos\" routerLinkActive=\"active\">Todos</a>\n      <a routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n    </nav>\n    <router-outlet></router-outlet>\n  </div>\n  ",
+            selector: 'todos',
+            template: "\n    <h1>{{title}}</h1>\n    <create-todo></create-todo>\n    <todo-list></todo-list>\n  ",
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TodosComponent);
+    return TodosComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TodosComponent = TodosComponent;
+//# sourceMappingURL=todos.component.js.map

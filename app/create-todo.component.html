@@ -1,18 +1,29 @@
-<form (ngSubmit)="add()"
-    #newtodo="ngForm" 
+<form [formGroup]="todoForm"
+    (ngSubmit)="add()"
     class="form-inline create-form center-block">
         
-    <input type="text" [(ngModel)]="todo.title" 
-        #title="ngModel"
+    <input type="text"
         name="title"
         class="form-control"
+        formControlName="title"
         required minlength="4">
 
-    <input type="color" [(ngModel)]="todo.color"
-        #color="ngModel"
+    <input type="color"
         name="color"
-        class="form-control input-color">
+        class="form-control input-color"
+        formControlName="color"
+        required>
     
     <input type="submit" value="ADD"
-        class="btn btn-default pull-right">
+        class="btn btn-default pull-right"
+        [disabled]="!todoForm.valid">
+
+    <div *ngIf="formErrors.title" class="alert alert-danger">
+        {{formErrors.title}}
+    </div>
+
+    <div *ngIf="formErrors.color" class="alert alert-danger">
+        {{formErrors.color}}
+    </div>
+
 </form>
