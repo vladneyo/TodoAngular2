@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_service_1 = require('./todo.service');
 var SearchComponent = (function () {
-    function SearchComponent() {
+    function SearchComponent(todoService) {
+        this.todoService = todoService;
         this.title = 'Search';
+        this.searchString = "";
+        this.list = [];
+        this.list = todoService.getTodos();
     }
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'search-todo',
-            template: "\n    <h1>{{title}}</h1>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <input type=\"text\" [(ngModel)]=\"searchString\" >\n    <div class=\"todo-list\">\n        <todo *ngFor=\"let todo of (list | searchTodo:searchString)\" [todo]=\"todo\"></todo>\n    </div>\n  ",
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [todo_service_1.TodoService])
     ], SearchComponent);
     return SearchComponent;
 }());

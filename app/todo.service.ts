@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TodoService{
+    
     private todos: Todo[] = [
         {title : "Learn Angular 2", color: "rgba(0, 128, 128, 0.5)"},
         {title : "Create first component", color: "rgba(90,199,185, 0.3)"},

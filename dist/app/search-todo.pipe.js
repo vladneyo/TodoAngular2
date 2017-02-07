@@ -9,17 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var SearchTodoPipe = (function () {
+    function SearchTodoPipe() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'todo-app',
-            template: "\n  <div class=\"container main\">\n    <nav>\n      <a routerLink=\"/todos\" routerLinkActive=\"active\">Todos</a>\n      <a routerLink=\"/search\" routerLinkActive=\"active\">Search</a>\n    </nav>\n    <router-outlet></router-outlet>\n  </div>\n  ",
+    SearchTodoPipe.prototype.transform = function (todos, title) {
+        return todos.filter(function (t) { return t.title.toLowerCase().includes(title.toLowerCase()); });
+    };
+    SearchTodoPipe = __decorate([
+        core_1.Pipe({
+            name: 'searchTodo',
+            pure: false
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], SearchTodoPipe);
+    return SearchTodoPipe;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SearchTodoPipe = SearchTodoPipe;
+//# sourceMappingURL=search-todo.pipe.js.map

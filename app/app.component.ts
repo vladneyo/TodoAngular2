@@ -13,4 +13,4 @@ import { Component } from '@angular/core';
   `,
 
 })
-export class AppComponent  { title = 'First Angular 2 App !'; }
+export class AppComponent  { }

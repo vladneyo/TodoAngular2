@@ -9,12 +9,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class CreateTodoComponent implements OnInit {
     
-    constructor(private todoService: TodoService, private fb: FormBuilder){ }
-
-    ngOnInit(): void{
-        this.buildForm();
-    }
-
     todoForm: FormGroup;
 
     formErrors = {
@@ -33,6 +27,12 @@ export class CreateTodoComponent implements OnInit {
     };
 
     todo: Todo = new Todo();
+
+    constructor(private todoService: TodoService, private fb: FormBuilder){ }
+
+    ngOnInit(): void{
+        this.buildForm();
+    }
 
     add(): void{
         this.todoService.addTodo(this.todoForm.value);
