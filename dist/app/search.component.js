@@ -21,7 +21,7 @@ var SearchComponent = (function () {
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'search-todo',
-            template: "\n    <h1>{{title}}</h1>\n    <input type=\"text\" [(ngModel)]=\"searchString\" >\n    <div class=\"todo-list\">\n        <todo *ngFor=\"let todo of (list | searchTodo:searchString)\" [todo]=\"todo\"></todo>\n    </div>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n\n    <div class=\"form search-form center-block\">\n      <input type=\"text\" [(ngModel)]=\"searchString\" class=\"form-control center-block\">\n    </div>\n    \n    <div class=\"todo-list\">\n        <todo *ngFor=\"let todo of (list | searchTodo:searchString)\" [todo]=\"todo\"></todo>\n    </div>\n  ",
         }), 
         __metadata('design:paramtypes', [todo_service_1.TodoService])
     ], SearchComponent);

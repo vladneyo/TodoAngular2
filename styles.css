@@ -21,6 +21,10 @@ h1 {
   width: 290px;
   margin: 20px;
 }
+.search-form{
+  width: 400px;
+  margin: 20px;
+}
 .todo-list{
   margin: 0 auto;
 }

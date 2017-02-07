@@ -20,7 +20,30 @@ var TodoComponent = (function () {
     TodoComponent = __decorate([
         core_1.Component({
             selector: 'todo',
-            template: "\n    <div class=\"todo\" [ngStyle]=\"{'background-color': todo.color}\">\n        <p>{{todo.title}}</p>\n    </div>\n    ",
+            template: "\n    <div class=\"todo\" [ngStyle]=\"{'background-color': todo.color}\" [@todoInOut]=\"'in'\">\n        <p>{{todo.title}}</p>\n    </div>\n    ",
+            animations: [
+                core_1.trigger('todoInOut', [
+                    core_1.state('in', core_1.style({ opacity: 1, transform: 'translateX(0)' })),
+                    core_1.state('void', core_1.style({ opacity: 0, transform: 'translateX(-100%)' })),
+                    core_1.transition('void => *', [
+                        core_1.style({
+                            opacity: 1,
+                            transform: 'translateX(-100%)'
+                        }),
+                        core_1.animate('0.2s ease-in')
+                    ]),
+                    core_1.transition('* => void', [
+                        core_1.style({
+                            opacity: 1,
+                            transform: 'translateX(-100%)'
+                        }),
+                        core_1.animate('0.2s 10 ease-out', core_1.style({
+                            opacity: 0,
+                            transform: 'scale(0,0)'
+                        }))
+                    ])
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], TodoComponent);

@@ -6,7 +6,11 @@ import { TodoService } from './todo.service';
   selector: 'search-todo',
   template: `
     <h1>{{title}}</h1>
-    <input type="text" [(ngModel)]="searchString" >
+
+    <div class="form search-form center-block">
+      <input type="text" [(ngModel)]="searchString" class="form-control center-block">
+    </div>
+    
     <div class="todo-list">
         <todo *ngFor="let todo of (list | searchTodo:searchString)" [todo]="todo"></todo>
     </div>
