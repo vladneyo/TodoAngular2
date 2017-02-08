@@ -20,6 +20,7 @@ var create_todo_component_1 = require('./create-todo.component');
 var todo_service_1 = require('./todo.service');
 var search_component_1 = require('./search.component');
 var search_todo_pipe_1 = require('./search-todo.pipe');
+var todo_focus_directive_1 = require('./todo-focus.directive');
 var appRoutes = [
     { path: '', redirectTo: '/todos', pathMatch: 'full' },
     { path: 'todos', component: todos_component_1.TodosComponent },
@@ -32,7 +33,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.ReactiveFormsModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
-            declarations: [app_component_1.AppComponent, todo_list_component_1.TodoListComponent, todo_component_1.TodoComponent, create_todo_component_1.CreateTodoComponent, todos_component_1.TodosComponent, search_component_1.SearchComponent, search_todo_pipe_1.SearchTodoPipe],
+            declarations: [app_component_1.AppComponent, todo_list_component_1.TodoListComponent, todo_component_1.TodoComponent, create_todo_component_1.CreateTodoComponent, todos_component_1.TodosComponent, search_component_1.SearchComponent, search_todo_pipe_1.SearchTodoPipe, todo_focus_directive_1.TodoFocusDirective],
             providers: [todo_service_1.TodoService],
             bootstrap: [app_component_1.AppComponent]
         }), 

@@ -11,6 +11,7 @@ import { CreateTodoComponent } from './create-todo.component';
 import { TodoService } from './todo.service';
 import { SearchComponent } from './search.component';
 import { SearchTodoPipe } from './search-todo.pipe';
+import { TodoFocusDirective } from './todo-focus.directive';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot(appRoutes)  ],
-  declarations: [ AppComponent, TodoListComponent, TodoComponent, CreateTodoComponent, TodosComponent, SearchComponent, SearchTodoPipe ],
+  declarations: [ AppComponent, TodoListComponent, TodoComponent, CreateTodoComponent, TodosComponent, SearchComponent, SearchTodoPipe, TodoFocusDirective ],
   providers: [ TodoService ],
   bootstrap:    [ AppComponent ]
 })

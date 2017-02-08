@@ -20,7 +20,7 @@ var TodoComponent = (function () {
     TodoComponent = __decorate([
         core_1.Component({
             selector: 'todo',
-            template: "\n    <div class=\"todo\" [ngStyle]=\"{'background-color': todo.color}\" [@todoInOut]=\"'in'\">\n        <p>{{todo.title}}</p>\n    </div>\n    ",
+            template: "\n    <div class=\"todo\" [ngStyle]=\"{'background-color': todo.color}\" [@todoInOut]=\"'in'\" todoFocus>\n        <p>{{todo.title}}</p>\n    </div>\n    ",
             animations: [
                 core_1.trigger('todoInOut', [
                     core_1.state('in', core_1.style({ opacity: 1, transform: 'translateX(0)' })),
